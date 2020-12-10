@@ -1,0 +1,10 @@
+name: Team awesome's approval workflow
+on: pull_request_review
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - run: npm install -g bats
+    - run: bats -v
